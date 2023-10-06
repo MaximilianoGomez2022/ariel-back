@@ -1,0 +1,47 @@
+<%- include('layouts/header.ejs', {title:"Home"}) %> 
+
+    <section id="acerca" class="container mb-5">
+        <h2>Acerca de mi</h2>
+        <p>Me llamo Maximiliano Gomez, Actualmente estoy cusrando la carrera de Desarrollo Web. Vivo en la Localidad de Ituzaingó.</p>
+    </section>
+    <section id="estudios" class="container mb-5">
+        <h2>Mis Estudios</h2>
+        <p>Estudié en la escuela técnica n°1 de Ituzaingó la modalidad de Técnico en Informática</p>
+        <p>Actualmente estudiando la carrera Desarrollo web en Escuela Da Vinci</p>
+    </section>
+    <section id="tecnologias" class="container mb-5">
+        <h2>Tecnologías</h2>
+        <ul>
+            <li>HTML</li>
+            <li>Css</li>
+            <li>Bootstrap</li>
+            <li>Javascript</li>
+            <li>Vue</li>
+            <li>Linux</li>
+            <li>Php</li>
+            <li>Laravel</li>
+        </ul>
+    </section>
+    <section id="proyectos" class="container mb-5">
+        <h2>Proyectos</h2>
+
+            <% for (let i= 0; i < proyectos.length; i++) { %>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul>
+                            <li>Nombre : <%=proyectos[i].name%></a></li>
+                            <li>Descripción : <%=proyectos[i].description%></li>
+                            <li>Link : <a href="<%= proyectos[i].link%>" target="_blank"><%= proyectos[i].link%></a></li>
+                            <li>Tecnologías : <%=proyectos[i].tecnologia%> </li>
+                          </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="<%= proyectos[i].img %> " alt="" srcset="">
+                    </div>
+
+                </div>
+             <%}%>  
+
+    </section>
+
+<%- include('layouts/footer.ejs') %> 

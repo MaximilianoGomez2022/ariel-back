@@ -1,0 +1,19 @@
+<%- include('../../layouts/header.ejs', {title:"Categorías"}) %> 
+
+    <section id="admin-proyectos" class="container">
+        <h2>Lista de Tecnologías</h2>
+        <li><a href="/admin/tecnologias/nuevo">Crear nueva tecnología</a></li>
+        <div class="row div-proyecto">
+            <% for (let i= 0; i < tecnologias.length; i++) { %>
+
+                    <div class="col-lg-6 mb-3">
+                        <ul>
+                            <h3><%=tecnologias[i].name%></h3>
+                            <li><a href="/admin/tecnologias/<%= tecnologias[i]._id %>/editar" class="btn btn-sucess w-50">Editar</a></li>
+                            <li><a href="/admin/tecnologias/<%= tecnologias[i]._id %>/eliminar" class="btn btn-danger w-50">Eliminar</a></li>
+                          </ul>
+                    </div>
+             <%}%>  
+            </div>
+    </section>
+    <%- include('../../layouts/footer.ejs') %> 

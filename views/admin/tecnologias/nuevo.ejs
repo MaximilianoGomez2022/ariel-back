@@ -1,0 +1,14 @@
+<%- include('../../layouts/header.ejs', {title:"Nuevo proyecto"}) %> 
+
+    <section class="container w-50">
+        <h2>Ingresa los datos de la nueva tecnología</h2>
+        <form method="post" action="/admin/tecnologias/nuevo">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input name="name" type="text" class="form-control" id="name">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+          </form>
+    </section>
+
+<%- include('../../layouts/footer.ejs') %> 

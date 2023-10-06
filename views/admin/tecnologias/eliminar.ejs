@@ -1,0 +1,10 @@
+<%- include('../../layouts/header.ejs', {title:"Eliminar categoría"}) %> 
+    <section class="container">
+        <h2>Eliminar categoría <%=tecnologia.name %> </h2>
+
+        <form action="/admin/tecnologias/<%=tecnologia._id %>/eliminar" method="post" class="form-class">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+    </section>
+
+<%- include('../../layouts/footer.ejs') %> 

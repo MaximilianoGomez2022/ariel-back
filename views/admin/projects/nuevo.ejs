@@ -1,0 +1,31 @@
+<%- include('../../layouts/header.ejs', {title:"Nuevo proyecto"}) %> 
+
+    <section class="container">
+        <h2>Ingresa los datos del nuevo proyecto</h2>
+        <form method="post" action="/admin/projects/nuevo">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input name="name" type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <input name="description" type="text" class="form-control" id="description">
+            </div>
+              <div class="mb-3">
+                <label class="form-label">Link</label>
+                <input name="link" type="text" class="form-control" id="link">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tecnologías</label>
+              <select class="form-select" name="tecnologia" multiple>
+              <% for(let i = 0; i < tecnologias.length; i++) { %>
+                <option value="<%=tecnologias[i].name%>"><%=tecnologias[i].name%></option>
+                <% }  %> 
+              </select>
+          </div>
+
+            <button type="submit" class="btn btn-primary">Agregar</button>
+          </form>
+    </section>
+
+<%- include('../../layouts/footer.ejs') %> 

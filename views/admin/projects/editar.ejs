@@ -1,0 +1,30 @@
+<%- include('../../layouts/header.ejs', {title:"Editar proyecto"}) %> 
+
+<section class="container">
+    <h2>Editá los datos del proyecto</h2>
+    <form method="post" action="/admin/projects/<%= proyecto._id %>/editar">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input value="<%= proyecto.name %> " name="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <input value="<%= proyecto.description %>" name="description" type="text" class="form-control" id="description">
+        </div>
+          <div class="mb-3">
+            <label class="form-label">Link</label>
+            <input value="<%= proyecto.link %>" name="link" type="text" class="form-control" id="link">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Categoría</label>
+          <select class="form-select" name="tecnologia" multiple>
+          <% for(let i = 0; i < tecnologias.length; i++) { %>
+            <option <%= (tecnologias[i].name == proyecto.tecnologia) ? 'selected' : '' %>  value="<%=tecnologias[i].name%>"><%=tecnologias[i].name%></option>
+            <% }  %> 
+          </select>
+      </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </form>
+</section>
+
+<%- include('../../layouts/footer.ejs') %> 

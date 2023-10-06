@@ -1,0 +1,14 @@
+<%- include('../../layouts/header.ejs', {title:"Editar tecnología"}) %> 
+
+<section class="container w-50">
+    <h2>Editá los datos de la tecnología</h2>
+    <form method="post" action="/admin/tecnologias/<%= tecnologia._id %>/editar">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input value="<%= tecnologia.name %> " name="name" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </form>
+</section>
+
+<%- include('../../layouts/footer.ejs') %> 

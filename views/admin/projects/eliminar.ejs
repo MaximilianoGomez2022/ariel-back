@@ -1,0 +1,13 @@
+<%- include('../../layouts/header.ejs', {title:"Eliminar proyecto"}) %> 
+    <section class="container">
+        <h2>Eliminar proyecto <%=proyecto.name %> </h2>
+        <p> Descripción: <%=proyecto.description %></p>
+        <p>Link: <%=proyecto.link %></p>
+        <img src="/<%=proyecto.img %>" alt="" srcset="">
+
+        <form action="/admin/projects/<%=proyecto._id %>/eliminar" method="post" class="form-class">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+    </section>
+
+<%- include('../../layouts/footer.ejs') %> 

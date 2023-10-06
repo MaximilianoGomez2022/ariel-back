@@ -1,0 +1,11 @@
+<%- include('../../layouts/header.ejs', {title:"Ver proyecto"}) %> 
+
+<section class="container text-center">
+    <h1><%= proyecto.name %></h1>
+    <img src="/<%=proyecto.img %>">
+    <p><%= proyecto.description %></p>
+    <p><%= proyecto.link %></p>
+    <a href="/admin/projects" class="text-center">Ver todos</a>
+</section>
+
+<%- include('../../layouts/footer.ejs') %> 
